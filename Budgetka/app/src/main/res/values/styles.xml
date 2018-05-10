@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textColorPrimary">@color/banana</item>
+    </style>
+
+</resources>
