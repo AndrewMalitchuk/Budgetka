@@ -39,13 +39,6 @@ public class TestFragment1 extends Fragment {
 
 
 
-        final Button btn= (Button) rootView.findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(),"йопта",Toast.LENGTH_SHORT).show();
-            }
-        });
 
         return rootView;
     }

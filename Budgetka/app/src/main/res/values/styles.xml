@@ -1,7 +1,7 @@
 <resources>
 
     <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:textColorPrimary">@color/banana</item>
+        <item name="android:textColorPrimary">@color/mainColor</item>
     </style>
 
 </resources>

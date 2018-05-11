@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.fragments.DashboardFragment;
+import com.example.fragments.ReportFragment;
 import com.example.fragments.TestFragment1;
 
 import butterknife.BindView;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         pager.setPageMargin(pageMargin);//установка відступів
         pager.setCurrentItem(0);//установка поточної вкладки
 
-        setColor(ContextCompat.getColor(getBaseContext(), R.color.banana));//установка цвета
+        setColor(ContextCompat.getColor(getBaseContext(), R.color.mainColor));//установка цвета
 
 //        //установка події при натискані на вкладці
         tabs.setOnTabReselectedListener(new PagerSlidingTabStrip.OnTabReselectedListener() {
@@ -131,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
 
             if(position==0){
                 return DashboardFragment.newInstance();
+            }else if(position==1){
+                return ReportFragment.newInstance();
             }
 
             return TestFragment1.newInstance();
