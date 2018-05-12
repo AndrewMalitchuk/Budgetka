@@ -48,7 +48,14 @@ dependencies {
     compile 'com.wdullaer:materialdatetimepicker:3.6.0'
 
 
+    //
+    compile 'com.android.support:cardview-v7:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
 
+
+    //
+    compile 'com.github.AnyChart:AnyChart-Android:0.1.9'
 
 
 }

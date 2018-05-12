@@ -17,7 +17,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.example.fragments.ColumnChartFragment;
 import com.example.fragments.DashboardFragment;
+import com.example.fragments.PieChartFragment;
 import com.example.fragments.ReportFragment;
 import com.example.fragments.TestFragment1;
 
@@ -134,6 +136,10 @@ public class MainActivity extends AppCompatActivity {
                 return DashboardFragment.newInstance();
             }else if(position==1){
                 return ReportFragment.newInstance();
+            }else if(position==2){
+                return PieChartFragment.newInstance();
+            }else if(position==3){
+                return ColumnChartFragment.newInstance();
             }
 
             return TestFragment1.newInstance();
