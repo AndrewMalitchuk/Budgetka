@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "403378290847",
+    "firebase_url": "https://budgetka-cca25.firebaseio.com",
+    "project_id": "budgetka-cca25",
+    "storage_bucket": "budgetka-cca25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403378290847:android:96acd4647d421568",
+        "android_client_info": {
+          "package_name": "com.example.budgetka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403378290847-vvi928l377a65gqhf34ni6a7n8i49h5a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOXlVj5eXNSffniS7bReR6Rt0W6RVgBhk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

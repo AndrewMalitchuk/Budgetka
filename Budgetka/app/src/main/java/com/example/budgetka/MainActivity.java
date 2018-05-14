@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         tabs.setOnTabReselectedListener(new PagerSlidingTabStrip.OnTabReselectedListener() {
             @Override
             public void onTabReselected(int position) {
-                Toast.makeText(MainActivity.this, "Tab reselected: " + position, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Tab reselected: " + position, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //створення меню
-        Toast.makeText(this, "onCreateOptionsMenu", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onCreateOptionsMenu", Toast.LENGTH_SHORT).show();
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 //      вот та дічь з іконкою
-        Toast.makeText(this, "onOptionsItemSelected", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onOptionsItemSelected", Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
     }
 
@@ -98,14 +98,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 //        при сворачевании
-        Toast.makeText(this, "onSaveInstanceState", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onSaveInstanceState", Toast.LENGTH_SHORT).show();
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
 //        при відновленні
-        Toast.makeText(this, "onRestoreInstanceState", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onRestoreInstanceState", Toast.LENGTH_SHORT).show();
         super.onRestoreInstanceState(savedInstanceState);
     }
 
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            Toast.makeText(MainActivity.this, "getItem: " + position, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.this, "getItem: " + position, Toast.LENGTH_SHORT).show();
 
             if(position==0){
                 return DashboardFragment.newInstance();

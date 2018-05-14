@@ -19,7 +19,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Ціна:"
+                android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -28,7 +29,8 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
 
@@ -42,17 +44,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:layout_weight="0"
+                android:text="Тип:"
+                android:textColor="@android:color/white" />
 
-            <EditText
-                android:id="@+id/editText4"
+            <Spinner
+                android:id="@+id/spinner2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                />
 
         </LinearLayout>
 
@@ -62,22 +64,34 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView6"
+            <RadioGroup
+                android:id="@+id/inOutRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:text="Тип:" />
+                android:layout_below="@+id/myCheckBox"
+                android:layout_margin="5dp">
 
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_width="157dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="0"
-                android:text="Надходження" />
 
+                <RadioButton
+                    android:id="@+id/outRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false"
+                    android:text="Витрати"
+                    android:textColor="@android:color/white" />
+
+
+                <RadioButton
+                    android:id="@+id/inRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/inRadioButton"
+                    android:text="Надходження"
+                    android:textColor="@android:color/white" />
+
+            </RadioGroup>
         </LinearLayout>
 
     </LinearLayout>
