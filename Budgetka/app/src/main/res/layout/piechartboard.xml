@@ -25,7 +25,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/editText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -71,6 +71,30 @@
                     android:layout_weight="0"
                     android:background="@color/button"
                     android:text="Обрати" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/button"
+                    android:text="Очистити" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/button"
+                    android:text="Виконати" />
             </LinearLayout>
 
             <android.support.constraint.ConstraintLayout

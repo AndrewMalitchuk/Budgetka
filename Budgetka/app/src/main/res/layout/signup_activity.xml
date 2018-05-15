@@ -8,6 +8,12 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/baseline_account_balance_wallet_white_36" />
+
     <com.github.florent37.materialtextfield.MaterialTextField
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

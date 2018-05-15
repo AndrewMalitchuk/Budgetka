@@ -1,5 +1,6 @@
 package com.example.budgetka;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
@@ -22,6 +23,7 @@ import com.example.fragments.DashboardFragment;
 import com.example.fragments.PieChartFragment;
 import com.example.fragments.ReportFragment;
 import com.example.fragments.TestFragment1;
+import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -83,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 //      вот та дічь з іконкою
 //        Toast.makeText(this, "onOptionsItemSelected", Toast.LENGTH_SHORT).show();
+
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(this, LoginActivity.class));
+
         return super.onOptionsItemSelected(item);
     }
 

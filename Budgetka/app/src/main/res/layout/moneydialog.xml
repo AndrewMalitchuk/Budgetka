@@ -24,7 +24,7 @@
 
             <EditText
                 android:id="@+id/editText3"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
@@ -44,17 +44,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_weight="0"
+                android:layout_weight="1"
                 android:text="Тип:"
                 android:textColor="@android:color/white" />
 
             <Spinner
                 android:id="@+id/spinner2"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
 
         </LinearLayout>
 

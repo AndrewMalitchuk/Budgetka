@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Харчування</item>
+        <item>Досуг</item>
+        <item>Комуналка</item>
+        <item>Транспорт</item>
+        <item>Ліки</item>
+        <item>Навчання</item>
+        <item>Кредит</item>
     </string-array>
 </resources>

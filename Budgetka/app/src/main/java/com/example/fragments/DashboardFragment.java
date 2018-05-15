@@ -164,6 +164,11 @@ public class DashboardFragment extends Fragment implements OnDateSelectedListene
             }
         });
 
+        getInSum(CalendarDay.from(CalendarDay.today().getYear(),CalendarDay.today().getMonth(),1));
+
+
+        initControls(getSelectedDatesString());
+
         return rootView;
     }
 
@@ -183,18 +188,27 @@ public class DashboardFragment extends Fragment implements OnDateSelectedListene
         initControls(getSelectedDatesString());
 
 
+
+
+
+
+
     }
 
     @Override
     public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
 
-//        Toast.makeText(getContext(), "onMonthChanged", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getContext(), "q "+date, Toast.LENGTH_SHORT).show();
 
         //noinspection ConstantConditions
 //        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(FORMATTER.format(date.getDate()));
 
+
+
         textView2.setText("0/0");
         getInSum(date);
+
+
 
 
     }
@@ -360,6 +374,8 @@ public class DashboardFragment extends Fragment implements OnDateSelectedListene
     }
 
     public String getInSum(final CalendarDay date){
+
+//        Toast.makeText(getContext(), "qq "+date, Toast.LENGTH_SHORT).show();
 
         Calendar calendar=new GregorianCalendar(date.getYear(),date.getMonth(),date.getDay());
 
