@@ -4,10 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ff4081</color>
     <color name="mainColor">#00e676</color>
-    <color name="background_window">#FFE5E5E5</color>
-    <color name="red">#F44336</color>
-    <color name="green">#4caf50</color>
-    <color name="slider_bar">#eeeeee</color>
-    <color name="button">#03a9f4</color>
+    <color name="background_window_color">#FFE5E5E5</color>
+    <color name="down_costs_color">#F44336</color>
+    <color name="up_costs_color">#4caf50</color>
+    <color name="slider_bar_color">#eeeeee</color>
+    <color name="button_color">#03a9f4</color>
     <color name="text_color">#9e9e9e</color>
 </resources>

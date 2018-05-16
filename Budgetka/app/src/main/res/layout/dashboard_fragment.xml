@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardview"
@@ -14,9 +14,8 @@
         card_view:cardBackgroundColor="@android:color/white"
         card_view:cardCornerRadius="8dp">
 
-
         <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/sliding_layout"
+            android:id="@+id/slidingLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom"
@@ -26,12 +25,10 @@
             sothree:umanoParalaxOffset="100dp"
             sothree:umanoShadowHeight="4dp">
 
-            <!-- MAIN CONTENT -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,15 +73,15 @@
                             sothree:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
-                                android:id="@+id/imageView"
+                                android:id="@+id/imageViewUp"
                                 android:layout_width="32dip"
                                 android:layout_height="32dip"
                                 android:layout_weight="0"
-                                android:background="@color/green"
+                                android:background="@color/up_costs_color"
                                 sothree:srcCompat="@drawable/baseline_keyboard_arrow_up_white_18" />
 
                             <TextView
-                                android:id="@+id/textView2"
+                                android:id="@+id/txtViewTotalMonthSum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
@@ -95,11 +92,11 @@
                                 android:textSize="18sp" />
 
                             <ImageView
-                                android:id="@+id/imageView2"
+                                android:id="@+id/imageViewDown"
                                 android:layout_width="32dip"
                                 android:layout_height="32dip"
                                 android:layout_weight="0"
-                                android:background="@color/red"
+                                android:background="@color/down_costs_color"
                                 sothree:srcCompat="@drawable/baseline_keyboard_arrow_down_white_18" />
                         </LinearLayout>
                     </android.support.constraint.ConstraintLayout>
@@ -118,13 +115,11 @@
                     android:clickable="true"
                     android:src="@drawable/baseline_add_24"
                     android:tint="@android:color/background_light"
-                    sothree:backgroundTint="@color/button"
+                    sothree:backgroundTint="@color/button_color"
                     sothree:rippleColor="@android:color/white" />
-
 
             </RelativeLayout>
 
-            <!-- SLIDING LAYOUT -->
             <LinearLayout
                 android:id="@+id/dragView"
                 android:layout_width="match_parent"
@@ -137,9 +132,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/slider_bar"
+                    android:background="@color/slider_bar_color"
                     android:orientation="vertical">
-
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -150,7 +144,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="70dip"
                             android:gravity="center"
-                            android:text="Вибери дату ежи"
+                            android:text="@string/empty_date"
                             android:textSize="18sp" />
                     </RelativeLayout>
 
@@ -159,12 +153,11 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/slider_bar"
+                    android:background="@color/slider_bar_color"
                     android:orientation="vertical">
 
-
                     <android.support.v7.widget.RecyclerView
-                        android:id="@+id/recycler_view"
+                        android:id="@+id/recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scrollbars="none" />
@@ -173,5 +166,4 @@
             </LinearLayout>
         </com.sothree.slidinguppanel.SlidingUpPanelLayout>
     </android.support.v7.widget.CardView>
-
 </FrameLayout>

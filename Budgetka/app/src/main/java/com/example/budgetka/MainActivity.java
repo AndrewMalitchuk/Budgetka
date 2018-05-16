@@ -15,14 +15,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
-import com.example.fragments.ColumnChartFragment;
+import com.example.fragments.ChartFragment;
 import com.example.fragments.DashboardFragment;
-import com.example.fragments.PieChartFragment;
-import com.example.fragments.ReportFragment;
-import com.example.fragments.TestFragment1;
+import com.example.fragments.DateReportFragment;
+import com.example.fragments.TypeReportFragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
@@ -44,14 +42,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
 
-        ButterKnife.bind(this);//ініц.по ід
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);//підключення тулбару
 
         adapter = new TabAdapter(getSupportFragmentManager());
-
         pager.setAdapter(adapter);
         tabs.setViewPager(pager);
 
@@ -61,34 +58,21 @@ public class MainActivity extends AppCompatActivity {
         pager.setPageMargin(pageMargin);//установка відступів
         pager.setCurrentItem(0);//установка поточної вкладки
 
-        setColor(ContextCompat.getColor(getBaseContext(), R.color.mainColor));//установка цвета
-
-//        //установка події при натискані на вкладці
-        tabs.setOnTabReselectedListener(new PagerSlidingTabStrip.OnTabReselectedListener() {
-            @Override
-            public void onTabReselected(int position) {
-//                Toast.makeText(MainActivity.this, "Tab reselected: " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        setColor(ContextCompat.getColor(getBaseContext(), R.color.mainColor));//установка кольора
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //створення меню
-//        Toast.makeText(this, "onCreateOptionsMenu", Toast.LENGTH_SHORT).show();
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-//      вот та дічь з іконкою
-//        Toast.makeText(this, "onOptionsItemSelected", Toast.LENGTH_SHORT).show();
-
+        //вихід з аккаунта
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(this, LoginActivity.class));
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -103,22 +87,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-//        при сворачевании
-//        Toast.makeText(this, "onSaveInstanceState", Toast.LENGTH_SHORT).show();
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-//        при відновленні
-//        Toast.makeText(this, "onRestoreInstanceState", Toast.LENGTH_SHORT).show();
         super.onRestoreInstanceState(savedInstanceState);
     }
 
-
     public class TabAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = {"Домашня", "Звіт", "Статистика", "Что-то еще"};
+        private final String[] TITLES = {"Домашня", "Звіт по даті", "Статистика", "Звіт по типу"};
 
         TabAdapter(FragmentManager fm) {
             super(fm);
@@ -136,20 +115,18 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-//            Toast.makeText(MainActivity.this, "getItem: " + position, Toast.LENGTH_SHORT).show();
-
-            if(position==0){
-                return DashboardFragment.newInstance();
-            }else if(position==1){
-                return ReportFragment.newInstance();
-            }else if(position==2){
-                return PieChartFragment.newInstance();
-            }else if(position==3){
-                return ColumnChartFragment.newInstance();
+            switch (position) {
+                case 0:
+                    return DashboardFragment.newInstance();
+                case 1:
+                    return DateReportFragment.newInstance();
+                case 2:
+                    return ChartFragment.newInstance();
+                case 3:
+                    return TypeReportFragment.newInstance();
+                default:
+                    return null;
             }
-
-            return TestFragment1.newInstance();
-
         }
     }
 }

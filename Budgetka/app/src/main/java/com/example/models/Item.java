@@ -1,9 +1,5 @@
 package com.example.models;
 
-/**
- * Created by Андрей on 13.05.2018.
- */
-
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
 
@@ -20,17 +16,13 @@ public class Item {
     private boolean isCosts;
     private String date;
 
-
     @Override
     public String toString() {
         return Double.toString(price) + "\n" + this.type + "\n" + this.isCosts + "\n" + this.date;
     }
 
-
     public Item() {
-        // Default constructor required for calls to DataSnapshot.getValue(ListItem.class)
     }
-
 
     public Item(double price, String type, boolean isCosts) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
@@ -50,7 +42,6 @@ public class Item {
         return result;
     }
 
-    /////////////////
     public double getPrice() {
         return price;
     }

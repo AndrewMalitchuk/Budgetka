@@ -3,9 +3,7 @@
 
     <item
         android:id="@+id/action_contact"
-
         android:icon="@drawable/baseline_exit_to_app_white_18"
         android:title="title"
         app:showAsAction="always" />
-
 </menu>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/mainColor"
     android:gravity="center"
     android:orientation="vertical"
@@ -33,7 +33,6 @@
 
     </com.github.florent37.materialtextfield.MaterialTextField>
 
-
     <com.github.florent37.materialtextfield.MaterialTextField
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +41,6 @@
         app:mtf_labelColor="@android:color/white">
 
         <EditText
-
             android:id="@+id/login_input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,7 +56,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:background="@color/button"
+        android:background="@color/button_color"
         android:text="@string/btn_login"
         android:textColor="@android:color/white" />
 
@@ -69,6 +67,6 @@
         android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
         android:text="@string/btn_link_to_signup"
-        android:textColor="@color/button" />
+        android:textColor="@color/button_color" />
 
 </LinearLayout>

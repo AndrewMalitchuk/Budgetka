@@ -1,21 +1,14 @@
 package com.example.budgetka;
 
-/**
- * Created by Андрей on 13.05.2018.
- */
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,16 +19,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
 public class SignupActivity extends AppCompatActivity {
 
-    private static final String TAG = "SignupActivity" ;
-    private Button btnSignUp,btnLinkToLogIn;
-//    private ProgressBar progressBar;
+    private static final String TAG = "SignupActivity";
+    private Button btnSignUp, btnLinkToLogIn;
     private FirebaseAuth auth;
-    private EditText signupInputEmail, signupInputPassword;
-//    private TextInputLayout signupInputLayoutEmail, signupInputLayoutPassword;
-
+    private EditText inputEmail, inputPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,16 +32,11 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.signup_activity);
         auth = FirebaseAuth.getInstance();
 
-//        signupInputLayoutEmail = (TextInputLayout) findViewById(R.id.signup_input_layout_email);
-//        signupInputLayoutPassword = (TextInputLayout) findViewById(R.id.signup_input_layout_password);
-//        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        inputEmail = findViewById(R.id.signup_input_email);
+        inputPassword = findViewById(R.id.signup_input_password);
 
-        signupInputEmail = (EditText) findViewById(R.id.signup_input_email);
-        signupInputPassword = (EditText) findViewById(R.id.signup_input_password);
-
-        btnSignUp = (Button) findViewById(R.id.btn_signup);
-        btnLinkToLogIn = (Button) findViewById(R.id.btn_link_login);
-
+        btnSignUp = findViewById(R.id.btn_signup);
+        btnLinkToLogIn = findViewById(R.id.btn_link_login);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,49 +55,27 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Validating form
-     */
     private void submitForm() {
+        String email = inputEmail.getText().toString().trim();
+        String password = inputPassword.getText().toString().trim();
 
-        String email = signupInputEmail.getText().toString().trim();
-        String password = signupInputPassword.getText().toString().trim();
-
-        if(!checkEmail()) {
+        if (!checkEmail()) {
             return;
         }
-        if(!checkPassword()) {
+        if (!checkPassword()) {
             return;
         }
-//        signupInputLayoutEmail.setErrorEnabled(false);
-//        signupInputLayoutPassword.setErrorEnabled(false);
 
-//        progressBar.setVisibility(View.VISIBLE);
-        //create user
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG,"createUserWithEmail:onComplete:" + task.isSuccessful());
-//                        progressBar.setVisibility(View.GONE);
-                        // If sign in fails, Log the message to the LogCat. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Log.d(TAG,"Authentication failed." + task.getException());
-
+                            Toast.makeText(SignupActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                         } else {
-
-//                            FirebaseDatabase.getInstance().getReference().
-
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-//get reference
                             DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-
-//build child
                             ref.child(user.getUid()).setValue(user.getEmail());
-
                             startActivity(new Intent(SignupActivity.this, MainActivity.class));
                             finish();
                         }
@@ -123,30 +85,22 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private boolean checkEmail() {
-        String email = signupInputEmail.getText().toString().trim();
+        String email = inputEmail.getText().toString().trim();
         if (email.isEmpty() || !isEmailValid(email)) {
-
-//            signupInputLayoutEmail.setErrorEnabled(true);
-//            signupInputLayoutEmail.setError(getString(R.string.err_msg_email));
-            signupInputEmail.setError(getString(R.string.err_msg_email));
-            requestFocus(signupInputEmail);
+            inputEmail.setError(getString(R.string.err_msg_email));
+            requestFocus(inputEmail);
             return false;
         }
-//        signupInputLayoutEmail.setErrorEnabled(false);
         return true;
     }
 
     private boolean checkPassword() {
-
-        String password = signupInputPassword.getText().toString().trim();
+        String password = inputPassword.getText().toString().trim();
         if (password.isEmpty() || !isPasswordValid(password)) {
-
-//            signupInputLayoutPassword.setError(getString(R.string.err_msg_password));
-            signupInputPassword.setError(getString(R.string.err_msg_password));
-            requestFocus(signupInputPassword);
+            inputPassword.setError(getString(R.string.err_msg_password));
+            requestFocus(inputPassword);
             return false;
         }
-//        signupInputLayoutPassword.setErrorEnabled(false);
         return true;
     }
 
@@ -154,7 +108,7 @@ public class SignupActivity extends AppCompatActivity {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-    private static boolean isPasswordValid(String password){
+    private static boolean isPasswordValid(String password) {
         return (password.length() >= 6);
     }
 
@@ -167,6 +121,5 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        progressBar.setVisibility(View.GONE);
     }
 }
