@@ -38,9 +38,6 @@ This application was created as an internship project in Eleks company.
 * Clone project via `git clone`.
 * Build project by yourself.
 
-**Option 2:**
-
-* Download [apk file]().
 
 
 
