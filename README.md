@@ -1,46 +1,77 @@
-# Budgetka - budget tracker app
+# Budgetka
 
-Створити програму яка дозволяє відслідковувати особистйи бюджет і зберігати дані про витрати та доходи. 
+Budgetka - pesronal budget tracking application written for Android OS.
 
-##### Можливості:
-- Додавання записи в стилі надходження/витрати
-- Категоризація записів 
-- Виділення даних за період
-- Генерування звітів за період
-- Відображення даних у вигляді діаграми з відомостіми про витрати/надходження за певний період
-- Зберігання даних у Firebase Database
-- Реєстрації нового користувача
-- Ідентифікація користувача по е-мейлу та паролю
-- Проста валідація даних
+## Overview
 
-##### Приклад функціюваня:
+Budgetka was created for easy personal tracking,  with costs statistic and Firebase Cloud data storaging.
 
-![alt text](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/demo.gif?raw=true "Демонстрація")
+You can easily add your profits and costs, analyze statistics and reports for certain date interval.
 
-Демонстрація [(відео)](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/demo.mp4 "Демонстрація")
+**App demo:**
+
+![](https://github.com/AndrewMalitchuk/Barcode-CardHolder/blob/master/screenshots/demo.gif)
+
+**App screenshots:**
+
+| ![](https://github.com/AndrewMalitchuk/Barcode-CardHolder/blob/master/screenshots/Nexus%206P-Screenshot1.png) | ![](https://github.com/AndrewMalitchuk/Barcode-CardHolder/blob/master/screenshots/Nexus%206P-Screenshot2.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![](https://github.com/AndrewMalitchuk/Barcode-CardHolder/blob/master/screenshots/Nexus%206P-Screenshot3.png) | ![](https://github.com/AndrewMalitchuk/Barcode-CardHolder/blob/master/screenshots/Nexus%206P-Screenshot4.png) |
+| ![](https://github.com/AndrewMalitchuk/Barcode-CardHolder/blob/master/screenshots/Nexus%206P-Screenshot5.png) | ![](https://github.com/AndrewMalitchuk/Barcode-CardHolder/blob/master/screenshots/Nexus%206P-Screenshot6.png) |
+
+This application was created as an internship project in Eleks company.
+
+## Features
+
+* Firebase Realtime Database data storing.
+* Adding profits/cost records.
+* Category querying.
+* Reports generating.
+* Statistic via pie diagrams.
+* User identification/registration.
+* Simple data validation.
+
+## Installation
+
+**Option 1:**
+
+* Clone project via `git clone`.
+* Build project by yourself.
+
+**Option 2:**
+
+* Download [apk file]().
 
 
-![alt text](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/Screenshot_20180517-161200.png?raw=true "Ідентифікація користувача по е-мейлу та паролю")
 
-Ідентифікація користувача по е-мейлу та паролю
+## System requirment
 
-![alt text](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/Screenshot_20180517-161311.png?raw=true "Реєстрація нового користувача")
+Android `API 25≤` is required.
 
-Реєстрація нового користувача
 
-![alt text](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/Screenshot_20180517-161921.png?raw=true "Додавання нового запису")
+## Contributing
 
-Додавання нового запису
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-![alt text](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/Screenshot_20180517-161934.png?raw=true "Приклад звіту по даті")
+Please make sure to update tests as appropriate.
 
-Приклад звіту по даті
+## License
 
-![alt text](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/Screenshot_20180517-161946.png?raw=true "Приклад відображення діграми надходжень/витрат")
-![alt text](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/Screenshot_20180517-161952.png "Приклад відображення діграми надходжень/витрат")
+Budgetka is under the [Apache License, version 2.0 ]().
 
-Приклад відображення діграми надходжень/витрат
+```
+Copyright (C) 2019 Andrew Malitchuk
 
-![alt text](https://github.com/AndrewMalitchuk/Budgetka/blob/master/Readme/Screenshot_20180517-162016.png?raw=true "Приклад звіту по типу витрат")
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-Приклад звіту по типу витрат
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
