@@ -57,7 +57,7 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-Budgetka is under the [Apache License, version 2.0 ]().
+Budgetka is under the [Apache License, version 2.0 ](https://github.com/AndrewMalitchuk/budgetka/blob/master/LICENSE).
 
 ```
 Copyright (C) 2019 Andrew Malitchuk
