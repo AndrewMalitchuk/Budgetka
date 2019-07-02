@@ -1,6 +1,6 @@
 # Budgetka
 
-Budgetka - pesronal budget tracking application written for Android OS.
+Budgetka - personal budget tracking application written for Android OS.
 
 ## Overview
 
